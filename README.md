@@ -13,9 +13,9 @@ Previous knowledge:
   * boolean operations
 
 Not covered:
-  *global variables
-  *random number generation
-  *procedural programming
+  * global variables
+  * random number generation
+  * procedural programming
 
 Lessons:
   1. variable declaration and assignment / input&output
