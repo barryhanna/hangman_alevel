@@ -2,7 +2,7 @@ import random
 
 
 def main():
-    dictionary = ["python", "monty", "parrot", "grail", "flying", "circus"]
+    dictionary = get_guess_words()
     hidden_word = dictionary[random.randint(0, len(dictionary)-1)]
     display_word = list('*' * len(hidden_word))
     lives = 5
@@ -10,7 +10,7 @@ def main():
 
     while lives > 0:
         print("Lives: {0} Guessed Letters: {1}".format(lives,guessed_letters))
-        guess_letter = str.lower(raw_input("Please enter a letter:"))
+        guess_letter = str.lower(input("Please enter a letter:"))
         
         if guess_letter in guessed_letters:
             print("Already tried '{0}'".format(set(guess_letter)))
@@ -34,6 +34,15 @@ def main():
         print("Congratulations, you win!")
     else:
         print("Tough luck. Maybe next time.")
+
+
+def get_guess_words(filename="words.txt"):
+    words_file = open(filename,'r').readlines()
+    words = []
+    for word in words_file:
+        words.append(word.rstrip('\n'))
+    return words
+
 
 if __name__ == "__main__":
     main()
